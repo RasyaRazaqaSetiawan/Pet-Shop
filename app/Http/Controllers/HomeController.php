@@ -27,7 +27,7 @@ class HomeController extends Controller
     {
         $user = auth::user();
         if ($user->is_admin == 1){
-            return view('home');
+            return view('include.backend.dashboard');
         } else{
             return view('home');
         }
