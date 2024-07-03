@@ -11,15 +11,12 @@ class kategori extends Model
 
     protected $table = 'kategoris'; 
 
-    protected $fillable = ['id', 'nama_kategori', 'cover', 'deskripsi'];
+    protected $fillable = ['id', 'nama_kategori', 'deskripsi'];
 
     public $timestamps = true;
 
-    // menghapus cover
-    public function deleteImage()
+    public function product()
     {
-        if ($this->cover && file_exists(public_path('images/kategori' . $this->cover))) {
-            return unlink(public_path('images/kategori' . $this->cover));
-        }
+        return $this->hasMany(Product::class, 'id_kategori');
     }
 }

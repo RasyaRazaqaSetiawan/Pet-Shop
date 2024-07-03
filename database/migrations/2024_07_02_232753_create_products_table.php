@@ -15,7 +15,15 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
+            $table->string('nama_product');
+            $table->string('gambar');
+            $table->string('deskripsi');
+            $table->integer('harga');
+            $table->integer('stok');
+            $table->unsignedBigInteger('id_kategori');
             $table->timestamps();
+
+            $table->foreign('id_kategori')->references('id')->on('kategoris')->onDelete('cascade');
         });
     }
 

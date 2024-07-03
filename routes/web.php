@@ -3,6 +3,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Middleware\IsAdmin;
 use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\ProductController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -19,4 +20,5 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', IsAdmin::class]], fu
     });
     // untuk Route Backend Lainnya
     Route::resource('kategori', KategoriController::class);
+    Route::resource('product', ProductController::class);
 });

@@ -28,7 +28,7 @@ class KategoriController extends Controller
     {
         $validated = $request->validate([
             'nama_kategori' => 'required|string|max:255|unique:kategoris',
-            'cover' => 'required|max:5400|mimes:png,jpg,webp',
+            'deskripsi' => 'required',
         ], [
             'nama_kategori.required' => 'Nama Kategori Harus Terisi',
             'nama_kategori.unique' => 'Kategori tersebut sudah ada',
@@ -37,14 +37,6 @@ class KategoriController extends Controller
         $kategori = new Kategori;
         $kategori->nama_kategori = $request->input('nama_kategori');
         $kategori->deskripsi = $request->input('deskripsi');
-
-        if ($request->hasFile('cover')) {
-            $img = $request->file('cover');
-            $name = rand(1000, 9999) . $img->getClientOriginalName();
-            $img->move('images/kategori', $name);
-            $kategori->cover = $name;
-        }
-
         $kategori->save();
 
         return redirect()->route('kategori.index')
@@ -65,7 +57,6 @@ class KategoriController extends Controller
     {
         $validated = $request->validate([
             'nama_kategori' => 'required|string|max:255|unique:kategoris',
-            'cover' => 'required|max:5400|mimes:png,jpg,webp',
             'deskripsi' => 'required',
         ], [
             'nama_kategori.required' => 'Nama Kategori Harus Terisi',
@@ -75,14 +66,7 @@ class KategoriController extends Controller
 
         $kategori->nama_kategori = $request->nama_kategori;
         $kategori->deskripsi = $request->deskripsi;
-
-        if ($request->hasFile('cover')) {
-            $img = $request->file('cover');
-            $name = rand(1000, 9999) . $img->getClientOriginalName();
-            $img->move('images/kategori', $name);
-            $kategori->cover = $name;
-        }
-
+        
         $kategori->save();
 
         return redirect()->route('kategori.index')

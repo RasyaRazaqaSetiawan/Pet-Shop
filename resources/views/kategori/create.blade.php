@@ -31,12 +31,6 @@
                         @endif
                         </div>
                     </div>
-                    <div class="row mb-3">
-                        <label for="formFile" class="col-sm-3 col-form-label">Gambar</label>
-                        <div class="col-sm-9">
-                            <input class="form-control" type="file" id="formFile" name="cover">
-                        </div>
-                    </div>
                     <div class="col-md-12">
                         <div class="d-md-flex d-grid align-items-center gap-3">
                             <button type="submit" class="btn btn-grd-primary px-4">Submit</button>

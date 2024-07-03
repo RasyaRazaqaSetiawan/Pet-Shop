@@ -23,6 +23,13 @@
                     <div class="menu-title">Kategori</div>
                 </a>
             </li>
+            <li>
+                <a href="{{route('product.index')}}">
+                    <div class="parent-icon"><i class="material-icons-outlined">inventory_2</i>
+                    </div>
+                    <div class="menu-title">Produk</div>
+                </a>
+            </li>
         </ul>
         <!--end navigation-->
     </div>
