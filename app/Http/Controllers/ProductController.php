@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Kategori;
 use App\Http\Middleware\IsAdmin;
-use App\Models\product;
+use App\Models\Product;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class ProductController extends Controller
 {
@@ -14,48 +15,19 @@ class ProductController extends Controller
         $this->middleware(['auth', IsAdmin::class]);
     }
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index(Request $request)
+    public function index()
     {
-        $kategori = Kategori::all();
-
-        // Ambil ID kategori dari request
-        $id_kategori = $request->get('id_kategori');
-
-        // Jika id_kategori ada dan tidak kosong, filter product berdasarkan kategori tersebut
-        if ($id_kategori) {
-            $product = Product::where('id_kategori', $id_kategori)->get();
-        } else {
-            // Jika tidak, ambil semua product
-            $product = Product::orderBy('created_at', 'desc')->get();
-
-        }
-
-        return view('product.index', compact('product', 'kategori', 'id_kategori'));
-
+        $product = Product::orderBy('id', 'desc')->get();
+        confirmDelete('Produk Dihapus', 'Apakah anda yakin ingin menghapusnya');
+        return view('admin.product.index', compact('product'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         $kategori = Kategori::all();
-        return view('product.create', compact('kategori'));
+        return view('admin.product.create', compact('kategori'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         $validated = $request->validate([
@@ -77,47 +49,29 @@ class ProductController extends Controller
         if ($request->hasFile('gambar')) {
             $img = $request->file('gambar');
             $name = rand(1000, 9999) . $img->getClientOriginalName();
-            $img->move('images/product', $name);
+            $img->move(public_path('/images/product'), $name);
             $product->gambar = $name;
         }
 
         $product->save();
 
-        return redirect()->route('product.index')
-            ->with('success', 'Product berhasil ditambahkan');
+        Alert::success('Success', 'Product berhasil ditambahkan');
+
+        return redirect()->route('product.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\product  $product
-     * @return \Illuminate\Http\Response
-     */
-    public function show(product $product)
+    public function show(Product $product)
     {
-        return view('product.show', compact('product'));
+        return view('admin.product.show', compact('product'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\product  $product
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(product $product)
+    public function edit(Product $product)
     {
-        $kategori = Kategori::all();
-        return view('product.edit', compact('product', 'kategori'));
+        $kategoris = Kategori::all();
+        return view('admin.product.edit', compact('product', 'kategoris'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\product  $product
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, product $product)
+    public function update(Request $request, Product $product)
     {
         $validated = $request->validate([
             'nama_product' => 'required|string|max:255',
@@ -135,30 +89,29 @@ class ProductController extends Controller
         $product->id_kategori = $request->id_kategori;
 
         if ($request->hasFile('gambar')) {
+            // Hapus gambar lama jika ada
+            if ($product->gambar) {
+                unlink(public_path('/images/product/' . $product->gambar));
+            }
+
             $img = $request->file('gambar');
             $name = rand(1000, 9999) . $img->getClientOriginalName();
-            $img->move('images/product', $name);
+            $img->move(public_path('/images/product'), $name);
             $product->gambar = $name;
         }
 
         $product->save();
 
-        return redirect()->route('product.index')
-            ->with('success', 'Product berhasil diubah');
+        Alert::success('Success', 'Product berhasil diubah');
+
+        return redirect()->route('product.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\product  $product
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(product $product)
+    public function destroy(Product $product)
     {
-        $product = Product::FindOrFail($product);
         $product->delete();
-        return redirect()->route('product.index')
-            ->with('success', 'data berhasil dihapus');
+        Alert::success('Success', 'Data berhasil dihapus');
+
+        return redirect()->route('product.index');
     }
 }
-

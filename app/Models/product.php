@@ -23,8 +23,8 @@ class product extends Model
     //menghapus img
     public function deleteImage()
     {
-        if ($this->cover && file_exists(public_path('images/artikel' . $this->cover))) {
-            return unlink(public_path('images/artikel' . $this->cover));
+        if ($this->gambar && file_exists(public_path('images/artikel' . $this->gambar))) {
+            return unlink(public_path('images/artikel' . $this->gambar));
         }
     }
 

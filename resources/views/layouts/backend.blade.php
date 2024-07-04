@@ -4,22 +4,27 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Maxton | Bootstrap 5 Admin Dashboard Template</title>
+    <title>Admin Dashboard</title>
     <!--favicon-->
     <link rel="icon" href="{{ asset('backend/assets/images/favicon-32x32.png') }}" type="image/png">
-    <!-- loader-->
+
+    <!--loader-->
     <link href="{{ asset('backend/assets/css/pace.min.css') }}" rel="stylesheet">
     <script src="{{ asset('backend/assets/js/pace.min.js') }}"></script>
 
     <!--plugins-->
     <link href="{{ asset('backend/assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css') }}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ asset('backend/assets/plugins/metismenu/metisMenu.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('backend/assets/plugins/metismenu/mm-vertical.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('backend/assets/plugins/simplebar/css/simplebar.css') }}">
+
     <!--bootstrap css-->
     <link href="{{ asset('backend/assets/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Material+Icons+Outlined" rel="stylesheet">
+
+    <!--DataTables CSS-->
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.bootstrap5.min.css">
+
     <!--main css-->
     <link href="{{ asset('backend/assets/css/bootstrap-extended.css') }}" rel="stylesheet">
     <link href="{{ asset('backend/sass/main.css') }}" rel="stylesheet">
@@ -29,10 +34,10 @@
     <link href="{{ asset('backend/sass/bordered-theme.css') }}" rel="stylesheet">
     <link href="{{ asset('backend/sass/responsive.css') }}" rel="stylesheet">
     @yield('css')
+    @yield('styles')
 </head>
 
 <body>
-
     <!--start header-->
     @include('include.backend.header')
     <!--end top header-->
@@ -47,16 +52,21 @@
             @yield('content')
         </div>
     </main>
+
     <!--end main wrapper-->
 
+    <!-- Sweet Alert-->
+    @include('sweetalert::alert')
+    <!-- Sweet Alert-->
 
     <!--start overlay-->
     <div class="overlay btn-toggle"></div>
     <!--end overlay-->
 
-
     <!--start footer-->
-    @include('include.backend.footer');
+    <footer class="page-footer">
+        <p class="mb-0">Copyright © 2024. All right reserved.</p>
+    </footer>
     <!--top footer-->
 
     <!--bootstrap js-->
@@ -64,14 +74,19 @@
 
     <!--plugins-->
     <script src="{{ asset('backend/assets/js/jquery.min.js') }}"></script>
-    <!--plugins-->
     <script src="{{ asset('backend/assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js') }}"></script>
     <script src="{{ asset('backend/assets/plugins/metismenu/metisMenu.min.js') }}"></script>
     <script src="{{ asset('backend/assets/plugins/simplebar/js/simplebar.min.js') }}"></script>
     <script src="{{ asset('backend/assets/js/main.js') }}"></script>
 
+    <!--DataTables JS-->
+    <script src="https://cdn.datatables.net/2.0.8/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/2.0.8/js/dataTables.bootstrap5.min.js"></script>
+
     @yield('js')
     @stack('script')
+    @stack('scripts')
+    @include('sweetalert::alert')
 </body>
 
 </html>

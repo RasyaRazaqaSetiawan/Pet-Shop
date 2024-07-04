@@ -50,8 +50,7 @@
                 <div class="ps-3">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb mb-0 p-0">
-                            <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
-                            </li>
+                            <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a></li>
                             <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
                         </ol>
                     </nav>
@@ -60,72 +59,149 @@
             <!--end breadcrumb-->
 
             <div class="row">
-                <div class="col d-flex align-items-stretch">
+                <!-- Welcome Back Section -->
+                <div class="col-12">
                     <div class="card w-100 overflow-hidden rounded-4">
                         <div class="card-body position-relative p-4">
+                            <div class="d-flex align-items-center gap-3 mb-5">
+                                <img src="https://placehold.co/110x110/png" class="rounded-circle bg-grd-info p-1" width="60" height="60" alt="user">
+                                <div>
+                                    <p class="mb-0 fw-semibold">Welcome back</p>
+                                    <h4 class="fw-semibold mb-0 fs-4 mb-0">{{ Auth::user()->name }}</h4>
+                                </div>
+                            </div>
                             <div class="row">
-                                <div class="col-12 col-sm-7">
-                                    <div class="d-flex align-items-center gap-3 mb-5">
-                                        <img src="https://placehold.co/110x110/png"
-                                            class="rounded-circle bg-grd-info p-1" width="60" height="60"
-                                            alt="user">
-                                        <div class="">
-                                            <p class="mb-0 fw-semibold">Welcome back</p>
-                                            <h4 class="fw-semibold mb-0 fs-4 mb-0">{{ Auth::user()->name }}</h4>
-                                        </div>
-                                    </div>
+                                <div class="col-12 col-sm-6">
                                     <div class="d-flex align-items-center gap-5">
-                                        <div class="">
-                                            <h4 class="mb-1 fw-semibold d-flex align-content-center">$65.4K<i
-                                                    class="ti ti-arrow-up-right fs-5 lh-base text-success"></i>
-                                            </h4>
-                                            <p class="mb-3">Today's Sales</p>
+                                        <div>
+                                            <h4 class="mb-1 fw-semibold d-flex align-content-center">$65.4K<i class="ti ti-arrow-up-right fs-5 lh-base text-success"></i></h4>
+                                            <p class="mb-3">Penjualan Minggu Ini</p>
                                             <div class="progress mb-0" style="height:5px;">
-                                                <div class="progress-bar bg-grd-success" role="progressbar"
-                                                    style="width: 60%" aria-valuenow="25" aria-valuemin="0"
-                                                    aria-valuemax="100"></div>
+                                                <div class="progress-bar bg-grd-success" role="progressbar" style="width: 60%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                             </div>
                                         </div>
                                         <div class="vr"></div>
-                                        <div class="">
-                                            <h4 class="mb-1 fw-semibold d-flex align-content-center">78.4%<i
-                                                    class="ti ti-arrow-up-right fs-5 lh-base text-success"></i>
-                                            </h4>
+                                        <div>
+                                            <h4 class="mb-1 fw-semibold d-flex align-content-center">78.4%<i class="ti ti-arrow-up-right fs-5 lh-base text-success"></i></h4>
                                             <p class="mb-3">Growth Rate</p>
                                             <div class="progress mb-0" style="height:5px;">
-                                                <div class="progress-bar bg-grd-danger" role="progressbar"
-                                                    style="width: 60%" aria-valuenow="25" aria-valuemin="0"
-                                                    aria-valuemax="100"></div>
+                                                <div class="progress-bar bg-grd-danger" role="progressbar" style="width: 60%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-12 col-sm-5">
+                                <div class="col-12 col-sm-6">
                                     <div class="welcome-back-img pt-4">
-                                        <img src="{{ asset('backend/assets/images/gallery/welcome-back') }}-3.png"
-                                            height="180" alt="">
+                                        <img src="{{ asset('backend/assets/images/gallery/welcome-back') }}-3.png" height="180" alt="">
                                     </div>
                                 </div>
                             </div><!--end row-->
                         </div>
                     </div>
                 </div>
-            </div>
+                <!-- Card: Total Orders -->
+                <div class="col-12 col-lg-6 col-xxl-4 mb-4">
+                    <div class="card rounded-4 w-100">
+                        <div class="card-body">
+                            <div class="mb-3 d-flex align-items-center justify-content-between">
+                                <div class="wh-42 d-flex align-items-center justify-content-center rounded-circle bg-primary bg-opacity-10 text-primary">
+                                    <span class="material-icons-outlined fs-5">shopping_cart</span>
+                                </div>
+                                <div>
+                                    <span class="text-success d-flex align-items-center">+24%<i class="material-icons-outlined">expand_less</i></span>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="mb-0">248k</h4>
+                                <p class="mb-3">Pesanan Berhasil</p>
+                                <div id="chart1"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card: Total Sales -->
+                <div class="col-12 col-lg-6 col-xxl-4 mb-4">
+                    <div class="card rounded-4 w-100">
+                        <div class="card-body">
+                            <div class="mb-3 d-flex align-items-center justify-content-between">
+                                <div class="wh-42 d-flex align-items-center justify-content-center rounded-circle bg-success bg-opacity-10 text-success">
+                                    <span class="material-icons-outlined fs-5">attach_money</span>
+                                </div>
+                                <div>
+                                    <span class="text-success d-flex align-items-center">+14%<i class="material-icons-outlined">expand_less</i></span>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="mb-0">$47.6k</h4>
+                                <p class="mb-3">Penjualan Minggu Ini</p>
+                                <div id="chart2"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card: Total Visits -->
+                <div class="col-12 col-lg-6 col-xxl-4 mb-4">
+                    <div class="card rounded-4 w-100">
+                        <div class="card-body">
+                            <div class="mb-3 d-flex align-items-center justify-content-between">
+                                <div class="wh-42 d-flex align-items-center justify-content-center rounded-circle bg-info bg-opacity-10 text-info">
+                                    <span class="material-icons-outlined fs-5">visibility</span>
+                                </div>
+                                <div>
+                                    <span class="text-danger d-flex align-items-center">-35%<i class="material-icons-outlined">expand_less</i></span>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="mb-0">189K</h4>
+                                <p class="mb-3">Pengguna yg telah dibuat</p>
+                                <div id="chart3"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!--end row-->
+
+            <!-- Table: Detail Pesanan -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="card w-100">
+                        <div class="card-body">
+                            <h5 class="card-title mb-4">Detail Pesanan</h5>
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">No</th>
+                                            <th scope="col">Nama Pengguna</th>
+                                            <th scope="col">Nama Product</th>
+                                            <th scope="col">Kategori</th>
+                                            <th scope="col">Jumlah</th>
+                                            <th scope="col">Harga</th>
+                                            <th scope="col">Total</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+
+                                        </tr>
+                                        <!-- Add more rows as needed -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!--end row-->
         </div>
     </main>
     <!--end main wrapper-->
-
-
 
     <!--start overlay-->
     <div class="overlay btn-toggle"></div>
     <!--end overlay-->
 
-
     <!--start footer-->
-    <footer class="page-footer">
-        <p class="mb-0">Copyright © 2024. All right reserved.</p>
-    </footer>
+    @include('include.backend.footer')
     <!--top footer-->
 
     <!--bootstrap js-->

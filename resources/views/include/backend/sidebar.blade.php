@@ -10,24 +10,31 @@
     <div class="sidebar-nav">
         <!--navigation-->
         <ul class="metismenu" id="sidenav">
-                <a href="{{route('home')}}">
-                    <div class="parent-icon"><i class="material-icons-outlined">home</i>
-                    </div>
+            <li>
+                <a href="{{ route('home') }}">
+                    <div class="parent-icon"><i class="material-icons-outlined">home</i></div>
                     <div class="menu-title">Dashboard</div>
                 </a>
-            <li class="menu-label">Data Table</li>
+            </li>
+            <li class="menu-label">Tabel Data</li>
             <li>
-                <a href="{{route('kategori.index')}}">
-                    <div class="parent-icon"><i class="material-icons-outlined">widgets</i>
-                    </div>
+                <a href="{{ route('kategori.index') }}">
+                    <div class="parent-icon"><i class="material-icons-outlined">widgets</i></div>
                     <div class="menu-title">Kategori</div>
                 </a>
             </li>
             <li>
-                <a href="{{route('product.index')}}">
-                    <div class="parent-icon"><i class="material-icons-outlined">inventory_2</i>
-                    </div>
+                <a href="{{ route('product.index') }}">
+                    <div class="parent-icon"><i class="material-icons-outlined">inventory_2</i></div>
                     <div class="menu-title">Produk</div>
+                </a>
+            </li>
+            <li class="menu-label">Pengaturan</li>
+            <li>
+                <a href="{{ route('user.index') }}">
+                    <div class="parent-icon"><i class="material-icons-outlined">person</i>
+                    </div>
+                    <div class="menu-title">Data User</div>
                 </a>
             </li>
         </ul>
