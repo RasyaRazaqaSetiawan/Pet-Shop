@@ -19,6 +19,7 @@
                         <tr>
                             <th>No</th>
                             <th>Nama Kategori</th>
+                            <th>Slug</th>
                             <th>Gambar Kategori</th>
                             <th>Action</th>
                         </tr>
@@ -28,6 +29,7 @@
                             <tr>
                                 <th scope="row">{{ $loop->index + 1 }}</th>
                                 <td>{{ $data->nama_kategori }}</td>
+                                <td>{{ $data->slug }}</td>
                                 <td>
                                     <img src="{{ asset('/images/kategori/' . $data->gambar) }}" width="100">
                                 </td>

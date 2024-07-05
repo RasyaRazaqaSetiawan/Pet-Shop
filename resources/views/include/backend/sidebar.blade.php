@@ -29,12 +29,26 @@
                     <div class="menu-title">Produk</div>
                 </a>
             </li>
+            <li>
+                <a href="{{route('pesanan.index')}}">
+                    <div class="parent-icon"><i class="material-icons-outlined">shopping_bag</i>
+                    </div>
+                    <div class="menu-title">Pesanan</div>
+                </a>
+            </li>
             <li class="menu-label">Pengaturan</li>
             <li>
                 <a href="{{ route('user.index') }}">
                     <div class="parent-icon"><i class="material-icons-outlined">person</i>
                     </div>
                     <div class="menu-title">Data User</div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="parent-icon"><i class="material-icons-outlined">description</i>
+                    </div>
+                    <div class="menu-title">Ulasan</div>
                 </a>
             </li>
         </ul>

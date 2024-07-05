@@ -175,9 +175,12 @@
                                             <th scope="col">Nama Pengguna</th>
                                             <th scope="col">Nama Product</th>
                                             <th scope="col">Kategori</th>
-                                            <th scope="col">Jumlah</th>
                                             <th scope="col">Harga</th>
+                                            <th scope="col">Jumlah</th>
                                             <th scope="col">Total</th>
+                                            <th scope="col">Tanggal</th>
+                                            <th scope="col">Alamat</th>
+                                            <th scope="col">Status</th>
                                         </tr>
                                     </thead>
                                     <tbody>

@@ -216,23 +216,16 @@
                     </a>
                     <hr class="dropdown-divider">
                     <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"><i
-                            class="material-icons-outlined">person_outline</i>Profile</a>
-                    <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"><i
                             class="material-icons-outlined">local_bar</i>Setting</a>
-                    <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"><i
-                            class="material-icons-outlined">dashboard</i>Dashboard</a>
-                    <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"><i
-                            class="material-icons-outlined">account_balance</i>Earning</a>
-                    <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"><i
-                            class="material-icons-outlined">cloud_download</i>Downloads</a>
                     <hr class="dropdown-divider">
-                    <a class="dropdown-item" href="{{ route('logout') }}"
-                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Logout') }}
-                        <i class="material-icons-outlined">power_settings_new</i>
-                    </a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                        @csrf
-                    </form>
+                    <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="{{ route('logout') }}"
+                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    <i class="material-icons-outlined">power_settings_new</i>
+                    {{ __('Logout') }}
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
                 </div>
             </li>
         </ul>

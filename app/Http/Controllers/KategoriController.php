@@ -6,6 +6,7 @@ use App\Models\Kategori;
 use App\Http\Middleware\IsAdmin;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class KategoriController extends Controller
 {
@@ -37,9 +38,11 @@ class KategoriController extends Controller
 
         $kategori = new Kategori;
         $kategori->nama_kategori = $request->input('nama_kategori');
+        $kategori->slug = Str::slug($request->nama_kategori);
+
         if ($request->hasFile('gambar')) {
             $img = $request->file('gambar');
-            $name = rand(1000, 9999) . $img->getClientOriginalName();
+            $name = rand(1000, 9999) . '_' . $img->getClientOriginalName();
             $img->move(public_path('/images/kategori'), $name);
             $kategori->gambar = $name;
         }
@@ -69,33 +72,35 @@ class KategoriController extends Controller
             'nama_kategori.required' => 'Nama Kategori harus terisi.',
             'nama_kategori.unique' => 'Kategori tersebut sudah ada.',
         ]);
-    
+
         $kategori->nama_kategori = $request->nama_kategori;
+        $kategori->slug = Str::slug($request->nama_kategori);
+
         if ($request->hasFile('gambar')) {
             // Hapus gambar lama jika ada
             if ($kategori->gambar) {
                 unlink(public_path('/images/kategori/' . $kategori->gambar));
             }
-    
+
             $img = $request->file('gambar');
-            $name = rand(1000, 9999) . $img->getClientOriginalName();
+            $name = rand(1000, 9999) . '_' . $img->getClientOriginalName();
             $img->move(public_path('/images/kategori'), $name);
             $kategori->gambar = $name;
-        } else {
-            // Jika tidak ada gambar baru yang diunggah, gunakan gambar yang sudah ada
-            $kategori->gambar = $request->input('existing_gambar');
         }
-    
+
         $kategori->save();
-    
+
         Alert::success('Success', 'Data berhasil diubah.');
-    
+
         return redirect()->route('kategori.index');
     }
-    
 
     public function destroy(Kategori $kategori)
     {
+        if ($kategori->gambar) {
+            unlink(public_path('/images/kategori/' . $kategori->gambar));
+        }
+
         $kategori->delete();
         Alert::success('Success', 'Kategori berhasil dihapus.');
 

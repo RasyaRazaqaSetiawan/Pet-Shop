@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\detail_pesanan;
+use App\Models\detailpesanan;
 use Illuminate\Http\Request;
 
-class DetailPesananController extends Controller
+class DetailpesananController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class DetailPesananController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\detail_pesanan  $detail_pesanan
+     * @param  \App\Models\detailpesanan  $detailpesanan
      * @return \Illuminate\Http\Response
      */
-    public function show(detail_pesanan $detail_pesanan)
+    public function show(detailpesanan $detailpesanan)
     {
         //
     }
@@ -52,10 +52,10 @@ class DetailPesananController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\detail_pesanan  $detail_pesanan
+     * @param  \App\Models\detailpesanan  $detailpesanan
      * @return \Illuminate\Http\Response
      */
-    public function edit(detail_pesanan $detail_pesanan)
+    public function edit(detailpesanan $detailpesanan)
     {
         //
     }
@@ -64,10 +64,10 @@ class DetailPesananController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\detail_pesanan  $detail_pesanan
+     * @param  \App\Models\detailpesanan  $detailpesanan
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, detail_pesanan $detail_pesanan)
+    public function update(Request $request, detailpesanan $detailpesanan)
     {
         //
     }
@@ -75,10 +75,10 @@ class DetailPesananController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\detail_pesanan  $detail_pesanan
+     * @param  \App\Models\detailpesanan  $detailpesanan
      * @return \Illuminate\Http\Response
      */
-    public function destroy(detail_pesanan $detail_pesanan)
+    public function destroy(detailpesanan $detailpesanan)
     {
         //
     }

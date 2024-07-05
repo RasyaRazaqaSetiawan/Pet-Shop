@@ -7,6 +7,7 @@ use App\Http\Middleware\IsAdmin;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Support\Str;
 
 class ProductController extends Controller
 {
@@ -41,6 +42,7 @@ class ProductController extends Controller
 
         $product = new Product();
         $product->nama_product = $request->nama_product;
+        $product->slug = Str::slug($request->nama_product);
         $product->deskripsi = $request->deskripsi;
         $product->harga = $request->harga;
         $product->stok = $request->stok;
@@ -83,6 +85,7 @@ class ProductController extends Controller
         ]);
 
         $product->nama_product = $request->nama_product;
+        $product->slug = Str::slug($request->nama_product);
         $product->deskripsi = $request->deskripsi;
         $product->harga = $request->harga;
         $product->stok = $request->stok;

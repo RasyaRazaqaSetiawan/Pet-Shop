@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Cviebrock\EloquentSluggable\Sluggable;
+
 
 class product extends Model
 {
@@ -13,12 +15,28 @@ class product extends Model
 
     protected $fillable = ['id', 'nama_product', 'gambar', 'deskripsi', 'harga', 'stok', 'id_kategori'];
 
+    public function sluggable(): array
+    {
+        return [
+            'slug' => [
+                'source' => 'nama_product'
+            ]
+        ];
+    }
+
+
     public $timestamps = true;
 
     public function kategori()
     {
         return $this->belongsTo(Kategori::class, 'id_kategori');
     }
+
+    public function pesanan()
+    {
+        return $this->hasMany(Pesanan::class, 'id_product');
+    }
+
 
     //menghapus img
     public function deleteImage()

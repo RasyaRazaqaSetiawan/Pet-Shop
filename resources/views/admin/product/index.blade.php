@@ -1,7 +1,8 @@
 @extends('layouts.backend')
 
 @section('styles')
-<link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.bootstrap5.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.0.1/css/buttons.bootstrap5.min.css">
 @endsection
 
 @section('content')
@@ -19,6 +20,7 @@
                     <tr>
                         <th>No</th>
                         <th>Nama Product</th>
+                        <th>Slug</th>
                         <th>Kategori</th>
                         <th>Gambar</th>
                         <th>Deskripsi</th>
@@ -32,6 +34,7 @@
                     <tr>
                         <th scope="row">{{ $loop->index + 1 }}</th>
                         <td>{{ $data->nama_product }}</td>
+                        <td>{{ $data->slug }}</td>
                         <td>{{ $data->kategori->nama_kategori }}</td>
                         <td>
                             <img src="{{ asset('/images/product/' . $data->gambar) }}" width="100">
@@ -63,9 +66,63 @@
 @endsection
 
 @push('scripts')
-    <script src="https://cdn.datatables.net/2.0.8/js/dataTables.js"></script>
-    <script src="https://cdn.datatables.net/2.0.8/js/dataTables.bootstrap5.js"></script>
-    <script>
-        new DataTable('#example');
-    </script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.0.1/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.bootstrap5.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.6.0/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.html5.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.print.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $('#example').DataTable({
+            dom: 'Bfrtip',
+            buttons: [
+                {
+                    extend: 'excel',
+                    exportOptions: {
+                        //agar tombol maupun kolom action tidak terbawa
+                        columns: ':not(:last-child)'
+                    }
+                },
+                {
+                    extend: 'pdf',
+                    exportOptions: {
+                        columns: ':not(:last-child)',
+                        stripHtml: false,
+                        //untuk gambar
+                        format: {
+                            body: function (data, column, row) {
+                                // ambil dari kolom table gambar
+                                if(column === 3) {
+                                    return '<img src="' + $(data).find('img').attr('src') + '" width="50"/>';
+                                }
+                                return data;
+                            }
+                        }
+                    }
+                },
+                {
+                    extend: 'print',
+                    exportOptions: {
+                        columns: ':not(:last-child)',
+                        stripHtml: false,
+                        format: {
+                            body: function (data, column, row) {
+                                if(column === 3) {
+                                    return '<img src="' + $(data).find('img').attr('src') + '" width="50"/>';
+                                }
+                                return data;
+                            }
+                        }
+                    }
+                }
+            ]
+        });
+    });
+</script>
 @endpush
