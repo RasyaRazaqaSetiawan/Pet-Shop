@@ -80,14 +80,6 @@
                                                 <div class="progress-bar bg-grd-success" role="progressbar" style="width: 60%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                             </div>
                                         </div>
-                                        <div class="vr"></div>
-                                        <div>
-                                            <h4 class="mb-1 fw-semibold d-flex align-content-center">78.4%<i class="ti ti-arrow-up-right fs-5 lh-base text-success"></i></h4>
-                                            <p class="mb-3">Growth Rate</p>
-                                            <div class="progress mb-0" style="height:5px;">
-                                                <div class="progress-bar bg-grd-danger" role="progressbar" style="width: 60%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-6">
@@ -100,61 +92,52 @@
                     </div>
                 </div>
                 <!-- Card: Total Orders -->
-                <div class="col-12 col-lg-6 col-xxl-4 mb-4">
+                <div class="col-12 col-sm-4 mb-3">
                     <div class="card rounded-4 w-100">
-                        <div class="card-body">
-                            <div class="mb-3 d-flex align-items-center justify-content-between">
+                        <div class="card-body py-2">
+                            <div class="mb-2 d-flex align-items-center justify-content-between">
                                 <div class="wh-42 d-flex align-items-center justify-content-center rounded-circle bg-primary bg-opacity-10 text-primary">
                                     <span class="material-icons-outlined fs-5">shopping_cart</span>
-                                </div>
-                                <div>
-                                    <span class="text-success d-flex align-items-center">+24%<i class="material-icons-outlined">expand_less</i></span>
                                 </div>
                             </div>
                             <div>
                                 <h4 class="mb-0">248k</h4>
-                                <p class="mb-3">Pesanan Berhasil</p>
-                                <div id="chart1"></div>
+                                <p class="mb-2">Pesanan Berhasil</p>
+                                <div id="chart1" style="height: 50px"></div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- Card: Total Sales -->
-                <div class="col-12 col-lg-6 col-xxl-4 mb-4">
+                <div class="col-12 col-sm-4 mb-3">
                     <div class="card rounded-4 w-100">
-                        <div class="card-body">
-                            <div class="mb-3 d-flex align-items-center justify-content-between">
+                        <div class="card-body py-2">
+                            <div class="mb-2 d-flex align-items-center justify-content-between">
                                 <div class="wh-42 d-flex align-items-center justify-content-center rounded-circle bg-success bg-opacity-10 text-success">
                                     <span class="material-icons-outlined fs-5">attach_money</span>
-                                </div>
-                                <div>
-                                    <span class="text-success d-flex align-items-center">+14%<i class="material-icons-outlined">expand_less</i></span>
                                 </div>
                             </div>
                             <div>
                                 <h4 class="mb-0">$47.6k</h4>
-                                <p class="mb-3">Penjualan Minggu Ini</p>
-                                <div id="chart2"></div>
+                                <p class="mb-2">Penjualan Minggu Ini</p>
+                                <div id="chart2"  style="height: 50px"></div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- Card: Total Visits -->
-                <div class="col-12 col-lg-6 col-xxl-4 mb-4">
+                <div class="col-12 col-sm-4 mb-3">
                     <div class="card rounded-4 w-100">
-                        <div class="card-body">
-                            <div class="mb-3 d-flex align-items-center justify-content-between">
+                        <div class="card-body py-2">
+                            <div class="mb-2 d-flex align-items-center justify-content-between">
                                 <div class="wh-42 d-flex align-items-center justify-content-center rounded-circle bg-info bg-opacity-10 text-info">
                                     <span class="material-icons-outlined fs-5">visibility</span>
-                                </div>
-                                <div>
-                                    <span class="text-danger d-flex align-items-center">-35%<i class="material-icons-outlined">expand_less</i></span>
                                 </div>
                             </div>
                             <div>
                                 <h4 class="mb-0">189K</h4>
-                                <p class="mb-3">Pengguna yg telah dibuat</p>
-                                <div id="chart3"></div>
+                                <p class="mb-2">Pengguna yg telah dibuat</p>
+                                <div id="chart3"  style="height: 50px"></div>
                             </div>
                         </div>
                     </div>

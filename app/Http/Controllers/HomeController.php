@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Models\User;
+use App\Models\Kategori;
+use App\Models\Product;
 
 class HomeController extends Controller
 {
@@ -25,11 +26,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $user = auth::user();
-        if ($user->is_admin == 1){
+        $user = Auth::user();
+        if ($user->is_admin == 1) {
             return view('include.backend.dashboard');
-        } else{
-            return view('home');
+        } else {
+            $kategori = Kategori::all();
+            $product = Product::all();
+            return view('home', compact('kategori', 'product'));
         }
     }
 }

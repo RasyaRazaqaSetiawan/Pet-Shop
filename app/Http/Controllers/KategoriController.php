@@ -17,7 +17,7 @@ class KategoriController extends Controller
 
     public function index()
     {
-        $kategori = Kategori::orderBy('id', 'desc')->get();
+        $kategori = Kategori::all();
         confirmDelete('Kategori Dihapus', 'Apakah anda yakin ingin menghapusnya');
         return view('admin.kategori.index', compact('kategori'));
     }
@@ -38,7 +38,6 @@ class KategoriController extends Controller
 
         $kategori = new Kategori;
         $kategori->nama_kategori = $request->input('nama_kategori');
-        $kategori->slug = Str::slug($request->nama_kategori);
 
         if ($request->hasFile('gambar')) {
             $img = $request->file('gambar');
@@ -74,7 +73,6 @@ class KategoriController extends Controller
         ]);
 
         $kategori->nama_kategori = $request->nama_kategori;
-        $kategori->slug = Str::slug($request->nama_kategori);
 
         if ($request->hasFile('gambar')) {
             // Hapus gambar lama jika ada

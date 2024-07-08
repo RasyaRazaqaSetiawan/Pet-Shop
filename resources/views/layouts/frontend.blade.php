@@ -15,59 +15,88 @@
 
 
     <!--------------- swiper-css ---------------->
-    <link rel="stylesheet" href="{{ asset('frontend/css/swiper10-bundle.min.css') }}">
+    <link rel="stylesheet" href="{{asset('frontend/css/swiper10-bundle.min.css')}}">
 
     <!--------------- bootstrap-css ---------------->
-    <link rel="stylesheet" href="{{ asset('frontend/css/bootstrap-5.3.2.min.css') }}">
+    <link rel="stylesheet" href="{{asset('frontend/css/bootstrap-5.3.2.min.css')}}">
 
     <!---------------------- Range Slider ------------------->
-    <link rel="stylesheet" href="{{ asset('frontend/css/nouislider.min.css') }}">
+    <link rel="stylesheet" href="{{asset('frontend/css/nouislider.min.css')}}">
 
     <!---------------------- Scroll ------------------->
-    <link rel="stylesheet" href="{{ asset('frontend/css/aos-3.0.0.css') }}">
+    <link rel="stylesheet" href="{{asset('frontend/asset/css/aos-3.0.0.css')}}">
 
     <!--------------- additional-css ---------------->
-    <link rel="stylesheet" href="{{ asset('frontend/css/style.css') }}">
-
-
+    <link rel="stylesheet" href="{{asset('frontend/css/style.css')}}">
 </head>
 
 <body>
 
-
-    <!--------------- header-section --------------->
+    <style>
+        /* Tambahkan ini di file CSS Anda */
+    .category-section {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px; /* Sesuaikan dengan kebutuhan */
+    }
+    
+    .product-wrapper {
+        flex: 1 1 20%; /* Atur ukuran sesuai kebutuhan */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    
+    .wrapper-img img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .wrapper-info {
+        margin-top: 10px;
+        text-align: center;
+    }
+    
+    
+    </style>
+    
+    <!---- Header ------->
     @include('include.frontend.header')
-    <!------------- header-section-end --------------->
+    <!---- /Header ------->
 
-    <!--------------- Main Content ---------------------------->
-    <main class="main-wrapper">
-        <div class="main-content">
-            @yield('content')
-        </div>
-    </main>
-    <!--------------- footer-section--------------->
+    <!---- Content ------->
+    @include('include.frontend.content')
+    <!---- /Content ------->
+
+    <!---- Footer ------->
     @include('include.frontend.footer')
-    <!--------------- footer-section-end--------------->
-
+    <!---- /Footer ------->
 
     <!--------------- jQuery ---------------->
-    <script src="{{ asset('frontend/js/jquery_3.7.1.min.js') }}"></script>
+    <script src="{{asset('frontend/assets/js/jquery_3.7.1.min.js')}}"></script>
 
     <!--------------- bootstrap-js ---------------->
-    <script src="{{ asset('frontend/js/bootstrap_5.3.2.bundle.min.js') }}"></script>
+    <script src="{{asset('frontend/assets/js/bootstrap_5.3.2.bundle.min.js')}}"></script>
 
     <!--------------- Range-Slider-js ---------------->
-    <script src="{{ asset('frontend/js/nouislider.min.js') }}"></script>
+    <script src="{{asset('frontend/assets/js/nouislider.min.js')}}"></script>
 
     <!--------------- scroll-Animation-js ---------------->
-    <script src="{{ asset('frontend/js/aos-3.0.0.js') }}"></script>
+    <script src="{{asset('frontend/assets/js/aos-3.0.0.js')}}"></script>
 
     <!--------------- swiper-js ---------------->
-    <script src="{{ asset('frontend/js/swiper10-bundle.min.js') }}"></script>
+    <script src="{{asset('frontend/assets/js/swiper10-bundle.min.js')}}"></script>
 
     <!--------------- additional-js ---------------->
-    <script src="{{ asset('frontend/js/shopus.js') }}"></script>
+    <script src="{{asset('frontend/assets/js/shopus.js')}}"></script>
 
+    <!-- Tambahkan link ke Bootstrap CSS dan JS jika belum ada -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/5.0.0-beta2/css/bootstrap.min.css"
+    rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.0.0-beta2/js/bootstrap.min.js"></script>
 
 </body>
 

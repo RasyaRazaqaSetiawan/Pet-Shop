@@ -24,54 +24,6 @@
                                     class="material-icons-outlined position-absolute me-3 translate-middle-y end-0 top-50 mobile-search-close">close</span>
                             </div>
                         </div>
-                        <div class="card-body search-content">
-                            <p class="search-title">Recent Searches</p>
-                            <div class="d-flex align-items-start flex-wrap gap-2 kewords-wrapper">
-                                <a href="javascript:;" class="kewords"><span>Angular Template</span><i
-                                        class="material-icons-outlined fs-6">search</i></a>
-                                <a href="javascript:;" class="kewords"><span>Dashboard</span><i
-                                        class="material-icons-outlined fs-6">search</i></a>
-                                <a href="javascript:;" class="kewords"><span>Admin Template</span><i
-                                        class="material-icons-outlined fs-6">search</i></a>
-                                <a href="javascript:;" class="kewords"><span>Bootstrap 5 Admin</span><i
-                                        class="material-icons-outlined fs-6">search</i></a>
-                                <a href="javascript:;" class="kewords"><span>Html eCommerce</span><i
-                                        class="material-icons-outlined fs-6">search</i></a>
-                                <a href="javascript:;" class="kewords"><span>Sass</span><i
-                                        class="material-icons-outlined fs-6">search</i></a>
-                                <a href="javascript:;" class="kewords"><span>laravel 9</span><i
-                                        class="material-icons-outlined fs-6">search</i></a>
-                            </div>
-                            <hr>
-                            <p class="search-title">Tutorials</p>
-                            <div class="search-list d-flex flex-column gap-2">
-                                <div class="search-list-item d-flex align-items-center gap-3">
-                                    <div class="list-icon">
-                                        <i class="material-icons-outlined fs-5">play_circle</i>
-                                    </div>
-                                    <div class="">
-                                        <h5 class="mb-0 search-list-title ">Wordpress Tutorials</h5>
-                                    </div>
-                                </div>
-                                <div class="search-list-item d-flex align-items-center gap-3">
-                                    <div class="list-icon">
-                                        <i class="material-icons-outlined fs-5">shopping_basket</i>
-                                    </div>
-                                    <div class="">
-                                        <h5 class="mb-0 search-list-title">eCommerce Website Tutorials</h5>
-                                    </div>
-                                </div>
-
-                                <div class="search-list-item d-flex align-items-center gap-3">
-                                    <div class="list-icon">
-                                        <i class="material-icons-outlined fs-5">laptop</i>
-                                    </div>
-                                    <div class="">
-                                        <h5 class="mb-0 search-list-title">Responsive Design</h5>
-                                    </div>
-                                </div>
-                            </div>
-
                             <hr>
                             <p class="search-title">Members</p>
 

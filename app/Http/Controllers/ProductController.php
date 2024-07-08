@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Kategori;
-use App\Http\Middleware\IsAdmin;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use App\Http\Middleware\IsAdmin;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Str;
 
@@ -19,6 +19,7 @@ class ProductController extends Controller
     public function index()
     {
         $product = Product::orderBy('id', 'desc')->get();
+        
         confirmDelete('Produk Dihapus', 'Apakah anda yakin ingin menghapusnya');
         return view('admin.product.index', compact('product'));
     }
@@ -42,7 +43,6 @@ class ProductController extends Controller
 
         $product = new Product();
         $product->nama_product = $request->nama_product;
-        $product->slug = Str::slug($request->nama_product);
         $product->deskripsi = $request->deskripsi;
         $product->harga = $request->harga;
         $product->stok = $request->stok;
@@ -66,7 +66,6 @@ class ProductController extends Controller
     {
         return view('admin.product.show', compact('product'));
     }
-
     public function edit(Product $product)
     {
         $kategoris = Kategori::all();
@@ -85,7 +84,6 @@ class ProductController extends Controller
         ]);
 
         $product->nama_product = $request->nama_product;
-        $product->slug = Str::slug($request->nama_product);
         $product->deskripsi = $request->deskripsi;
         $product->harga = $request->harga;
         $product->stok = $request->stok;
