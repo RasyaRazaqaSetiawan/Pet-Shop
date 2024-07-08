@@ -269,7 +269,7 @@
                 <div class="header-nav-menu justify-content-center">
                     <ul class="menu-list d-flex">
                         <li>
-                            <a href="{{url('/')}}">
+                            <a href="{{url('home')}}">
                                 <span class="list-text">Home</span>
                             </a>
                         </li>

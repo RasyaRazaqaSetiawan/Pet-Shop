@@ -63,7 +63,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="product-info-content" data-aos="fade-left">
-                            <h5>{{$product->nama_product}}</h5>
+                            <h5>{{$product->nama_product}}</h5>   
                             <div class="price">
                                 <span class="new-price">@currency($product->harga)</span>
                             </div>
@@ -101,7 +101,7 @@
                                 <p class="category">Category : <span class="inner-text">{{$product->kategori->nama_kategori}}</span></p>
                             </div>
                             <hr>
-                            <p class="content-paragraph"><span class="inner-text">{{$product->deskripsi}}</span></p>
+                            <p class="content-paragraph"><span class="inner-text">{{$product->deskripsi}}</span></p>    
                         </div>
                     </div>
                 </div>
@@ -109,11 +109,12 @@
         </div>
     </section>
     <!--------------- products-info-end--------------->
+
     <!--------------- footer-section--------------->
     @include('include.frontend.footer')
     <!--------------- footer-section-end--------------->
 
-
+    
 
 
     <!--------------- jQuery ---------------->

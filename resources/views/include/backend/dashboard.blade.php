@@ -66,7 +66,7 @@
                             <div class="d-flex align-items-center gap-3 mb-5">
                                 <img src="https://placehold.co/110x110/png" class="rounded-circle bg-grd-info p-1" width="60" height="60" alt="user">
                                 <div>
-                                    <p class="mb-0 fw-semibold">Welcome back</p>
+                                    <p class="mb-0 fw-semibold">Selamat Datang !</p>
                                     <h4 class="fw-semibold mb-0 fs-4 mb-0">{{ Auth::user()->name }}</h4>
                                 </div>
                             </div>

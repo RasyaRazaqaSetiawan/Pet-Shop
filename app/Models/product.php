@@ -25,6 +25,8 @@ class product extends Model
         return $this->hasMany(Pesanan::class, 'id_product');
     }
 
+    
+
 
     //menghapus img
     public function deleteImage()
