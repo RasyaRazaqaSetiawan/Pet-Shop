@@ -109,21 +109,6 @@
         <div class="footer-section">
             <div class="row gy-5">
                 <div class="col-lg-3 col-sm-6">
-                    <div class="footer-order">
-                        <div class="logo">
-                            <img src="assets/images/logos/footer-logo.webp" alt="logo">
-                        </div>
-                        <div class="footer-link order-link">
-                            <ul>
-                                <li><a href="order.html">Track Order</a></li>
-                                <li><a href="cart.html">Delivery & Returns</a></li>
-                                <li><a href="about.html">Warranty</a></li>
-                            </ul>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
                     <div class="about-us">
                         <h4 class="footer-heading footer-title">
                             About Us
@@ -184,7 +169,7 @@
                                 </div>
                                 <div class="details">
                                     <h4 class="footer-heading">Address:</h4>
-                                    <p>4517 Washington Ave. Manchester, Kentucky 39495</p>
+                                    <p>Smk Assalaam Bandung</p>
                                 </div>
                             </div>
                             <div class="phone address">
@@ -209,7 +194,7 @@
                                 </div>
                                 <div class="details">
                                     <h4 class="footer-heading">Phone:</h4>
-                                    <p>+880171889547</p>
+                                    <p>+62 851 6119 6033</p>
                                 </div>
                             </div>
                         </div>
@@ -221,3 +206,4 @@
     </div>
 </section>
 <!-- /Footer -->
+

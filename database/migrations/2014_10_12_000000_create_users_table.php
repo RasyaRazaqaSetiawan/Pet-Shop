@@ -21,8 +21,7 @@ return new class extends Migration
             $table->string('password');
             $table->boolean('is_admin')->default(0);
             $table->string('telepon')->nullable();
-            $table->date('tanggal_lahir')->nullable();
-            $table->string('jenis_kelamin')->nullable();
+            $table->string('alamat')->nullable();
             $table->string('photo')->nullable();
             $table->rememberToken();
             $table->timestamps();

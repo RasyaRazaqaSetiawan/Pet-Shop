@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Kategori;
 use App\Models\Product;
+use App\Models\DetailPesanan;
 
 class HomeController extends Controller
 {

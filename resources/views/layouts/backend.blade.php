@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Admin Dashboard</title>
-    
+
     <!--loader-->
     <link href="{{ asset('backend/assets/css/pace.min.css') }}" rel="stylesheet">
     <script src="{{ asset('backend/assets/js/pace.min.js') }}"></script>
@@ -32,11 +32,33 @@
     <link href="{{ asset('backend/sass/semi-dark.css') }}" rel="stylesheet">
     <link href="{{ asset('backend/sass/bordered-theme.css') }}" rel="stylesheet">
     <link href="{{ asset('backend/sass/responsive.css') }}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     @yield('css')
     @yield('styles')
 </head>
 
 <body>
+    <style>
+        .profile-image {
+            width: 200px;
+            /* Sesuaikan ukuran sesuai kebutuhan Anda */
+            height: 200px;
+            /* Sesuaikan ukuran sesuai kebutuhan Anda */
+            border-radius: 50%;
+            /* Membuat gambar menjadi lingkaran */
+            object-fit: cover;
+            /* Memastikan gambar diisi ke dalam lingkaran tanpa distorsi */
+        }
+
+        .profile-image-container {
+            width: 200px;
+            /* Sesuaikan ukuran sesuai kebutuhan Anda */
+            height: 200px;
+            /* Sesuaikan ukuran sesuai kebutuhan Anda */
+            overflow: hidden;
+            /* Pastikan gambar tetap di dalam lingkaran */
+        }3
+    </style>
     <!--start header-->
     @include('include.backend.header')
     <!--end top header-->

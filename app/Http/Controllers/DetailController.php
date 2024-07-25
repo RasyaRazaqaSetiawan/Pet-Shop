@@ -10,6 +10,6 @@ class DetailController extends Controller
     public function show($id)
     {
         $product = Product::findOrFail($id);
-        return view('de`tail', compact('product'));
+        return view('detail', compact('product'));
     }
 }

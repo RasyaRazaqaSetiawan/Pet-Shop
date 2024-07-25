@@ -1105,7 +1105,7 @@ button {
 }
 
 .hero-slider-one {
-  background: url("../assets/images/homepage-one/hero-slider-one.webp") no-repeat center/cover;
+  background: url("../assets/images/Bro.png") no-repeat center/cover;
 }
 
 .hero-slider-two {
@@ -1233,7 +1233,7 @@ button {
 }
 
 .wrapper-one {
-  background: url("../assets/images/homepage-one/syle-bg-one.webp") no-repeat center/cover;
+  background: url("../assets/images/meow.png") no-repeat center/cover;
 }
 .wrapper-one .shop-btn {
   padding: 1.2rem 3.4rem;
@@ -1245,7 +1245,7 @@ button {
   font-size: 1.4rem;
   font-weight: 500;
   position: relative;
-  color: #232532;
+  color: #FFFFFF;
   font-family: "Inter", sans-serif;
   transition: all 0.3s;
   overflow: hidden;
@@ -1294,7 +1294,7 @@ button {
 }
 
 .wrapper-two {
-  background: url("../assets/images/homepage-one/style-bg-two.webp") no-repeat center/cover;
+  background: url("../assets/images/Anjing.png") no-repeat center/cover;
 }
 .wrapper-two .shop-btn {
   padding: 1.2rem 3.4rem;
@@ -1654,7 +1654,7 @@ button {
   padding-top: 6rem;
 }
 .weekly-sale .style-section .wrapper-one {
-  background: url("../assets/images/homepage-one/style-bg-three.webp") no-repeat center/cover;
+  background: url("../assets/images/Kucing.png") no-repeat center/cover;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -1662,7 +1662,7 @@ button {
   gap: 0px;
 }
 .weekly-sale .style-section .wrapper-two {
-  background: url("../assets/images/homepage-one/style-bg-four.webp") no-repeat center/cover;
+  background: url("../assets/images/Anjing.png") no-repeat center/cover;
 }
 @media (max-width:767px) {
   .weekly-sale h5 {
@@ -2245,7 +2245,7 @@ hr {
 }
 
 .sidebar-shop-section {
-  background: url("../assets/images/homepage-one/sidebar-img.png");
+  background: url("../assets/images/laut.png");
   padding: 3rem;
   margin-top: 3rem;
   height: 29.5rem;

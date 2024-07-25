@@ -4,73 +4,40 @@
         <div class="swiper-wrapper hero-wrapper">
             <div class="swiper-slide hero-slider-one">
                 <div class="container">
-                    <div class="col-lg-6">
-                        <div class="wrapper-section" data-aos="fade-up">
-                            <div class="wrapper-info">
-                                <h5 class="wrapper-subtitle">UP TO <span class="wrapper-inner-title">70%</span> OFF
-                                </h5>
-                                <h1 class="wrapper-details">Fashion Collection
-                                    Summer Sale</h1>
-                                <a href="product-sidebar.html" class="shop-btn">Shop Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-slide hero-slider-two">
-                <div class="container">
-                    <div class="col-lg-6">
-                        <div class="wrapper-section">
-                            <div class="wrapper-info">
-                                <h5 class="wrapper-subtitle">UP TO <span class="wrapper-inner-title">70%</span> OFF
-                                </h5>
-                                <h1 class="wrapper-details">Fashion Collection
-                                    Summer Sale</h1>
-                                <a href="#" class="shop-btn">Shop Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-slide hero-slider-three">
-                <div class="container">
-                    <div class="col-lg-6">
-                        <div class="wrapper-section">
-                            <div class="wrapper-info">
-                                <h5 class="wrapper-subtitle">UP TO <span class="wrapper-inner-title">70%</span> OFF
-                                </h5>
-                                <h1 class="wrapper-details">Fashion Collection
-                                    Summer Sale</h1>
-                                <a href="#" class="shop-btn">Shop Now</a>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="wrapper-section" data-aos="fade-up">
+                                <div class="wrapper-info">
+                                    <h1 class="wrapper-details">Selamat Datang Di Rara PetShop</h1>
+                                    <a href="{{ url('shop') }}" class="shop-btn">Shop Now</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="swiper-pagination"></div>
     </div>
 </section>
+
 <!--------------- hero-section-end --------------->
 
 <!--------------- category-section--------------->
-
 <section class="product-category mb-5">
     <div class="container">
         <div class="section-title">
-            <h5>Our Categories</h5>
+            <h5>Kategori</h5>
         </div>
-
         <div class="category-section d-flex flex-wrap">
             @foreach ($kategori as $data)
-            <div class="product-wrapper me-3" data-aos="fade-right" data-aos-duration="100">
-                <div class="wrapper-img">
-                    <img src="{{ asset('/images/kategori/' . $data->gambar) }}" width="100">
+                <div class="product-wrapper me-3" data-aos="fade-right" data-aos-duration="100">
+                    <div class="wrapper-img">
+                        <img src="{{ asset('/images/kategori/' . $data->gambar) }}" width="100">
+                    </div>
+                    <div class="wrapper-info">
+                        <a class="wrapper-details">{{ $data->nama_kategori }}</a>
+                    </div>
                 </div>
-                <div class="wrapper-info">
-                    <a href="" class="wrapper-details">{{ $data->nama_kategori }}</a>
-                </div>
-            </div>
             @endforeach
         </div>
     </div>
@@ -81,8 +48,7 @@
 <section class="product arrival">
     <div class="container">
         <div class="section-title">
-            <h5>BEST SELLER</h5>
-            <a href="product-sidebar.html" class="view">View All</a>
+            <h5>PRODUK TERBARU</h5>
         </div>
         <div class="arrival-section">
             <div class="row g-5">
@@ -104,7 +70,12 @@
                                 </div>
                             </div>
                             <div class="product-cart-btn">
-                                <a href="cart.html" class="product-btn">Add To Cart</a>
+                                <form action="{{ route('keranjang.add') }}" method="POST">
+                                    @csrf
+                                    <input type="hidden" name="id_product" value="{{ $data->id }}">
+                                    <input type="hidden" name="jumlah" value="1">
+                                    <button type="submit" class="product-btn">Tambahkan Ke Keranjang</button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -113,6 +84,7 @@
         </div>
     </div>
 </section>
+
 
 <!--------------- arrival-section-end--------------->
 
@@ -124,11 +96,10 @@
                 <div class="col-lg-6">
                     <div class="product-wrapper wrapper-one" data-aos="fade-right">
                         <div class="wrapper-info">
-                            <span class="wrapper-subtitle">NEW STYLE</span>
-                            <h4 class="wrapper-details">Get 65% Offer
-                                <span class="wrapper-inner-title">& Make New</span> Fusion.
+                            <h4 class="wrapper-details">Berikan Makanan
+                                <span class="wrapper-inner-title">Terbaik</span>Untuk Dia
                             </h4>
-                            <a href="product-sidebar.html" class="shop-btn">Shop Now
+                            <a href="{{ url('shop') }}" class="shop-btn">Shop Now
                                 <span>
                                     <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -145,13 +116,12 @@
                 <div class="col-lg-6">
                     <div class="product-wrapper wrapper-two" data-aos="fade-up">
                         <div class="wrapper-info">
-                            <span class="wrapper-subtitle">Mega OFFER</span>
                             <h4 class="wrapper-details">
-                                Make your New
-                                <span class="wrapper-inner-title">Styles with Our</span>
-                                Products
+                                Ingin
+                                <span class="wrapper-inner-title">Lebih Tau</span>
+                                Tentang Kami??
                             </h4>
-                            <a href="product-sidebar.html" class="shop-btn">Shop Now
+                            <a href="{{ url('about') }}" class="shop-btn">Tentang Kami
                                 <span>
                                     <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -175,13 +145,12 @@
 <section class="product best-product">
     <div class="container">
         <div class="section-title">
-            <h5>Reccomendation For You</h5>
-            <a href="flash-sale.html" class="view">View All</a>
+            <h5>Rekomendasi Untuk Kamu</h5>
         </div>
         <div class="best-product-section">
             <div class="row g-4">
                 @foreach ($product as $data)
-                    <div class="col-xl-2 col-md-4">
+                    <div class="col-lg-3 col-sm-6">
                         <div class="product-wrapper" data-aos="fade-up">
                             <div class="product-img">
                                 <img src="{{ asset('/images/product/' . $data->gambar) }}" width="100">
@@ -198,7 +167,13 @@
                                 </div>
                             </div>
                             <div class="product-cart-btn">
-                                <a href="cart.html" class="product-btn">Add To Cart</a>
+                                <form action="{{ route('keranjang.add') }}" method="POST">
+                                    @csrf
+                                    <input type="hidden" name="id_product" value="{{ $data->id }}">
+                                    <input type="hidden" name="jumlah" value="1">
+                                    <!-- Jumlah produk bisa disesuaikan -->
+                                    <button type="submit" class="product-btn">Tambahkan Ke keranjang</button>
+                                </form>
                             </div>
                         </div>
                     </div>

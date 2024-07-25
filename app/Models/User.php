@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -20,8 +19,14 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
-        'password',
+        'is_admin',
+        'telepon',
+        'alamat',
+        'photo',
     ];
+
+    protected $guarded = ['password'];
+
     /**
      * The attributes that should be hidden for serialization.
      *
@@ -41,9 +46,22 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function pesanan()
+    /**
+     * Relationship to Pesanan model.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function transaksi()
     {
-        return $this->hasMany(Pesanan::class, 'id_user');
+        return $this->hasMany(Transaksi::class, 'id_user');
+    }
+
+    //menghapus img
+    public function deleteImage()
+    {
+        if ($this->gambar && file_exists(public_path('images/user' . $this->gambar))) {
+            return unlink(public_path('images/user' . $this->gambar));
+        }
     }
 
 }

@@ -1,0 +1,24 @@
+{
+  "folders": [
+	{
+		"name": "pkl_internal",
+		"path": "."
+	},
+	{
+		"name": "shopushtml-10",
+		"path": "../../../../TEMPLATE/shopushtml-10"
+	},
+	{
+		"name": "maxtonhtml-10",
+		"path": "../../../../TEMPLATE/maxtonhtml-10"
+	},
+	{
+		"name": "Project_P5",
+		"path": "../Project_P5"
+	},
+	{
+		"path": "../Latihan_Pkl"
+	}
+],
+  "settings": {}
+}

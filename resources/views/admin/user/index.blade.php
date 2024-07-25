@@ -27,6 +27,9 @@
                                 <td>{{ $data->name  }}</td>
                                 <td>{{ $data->email }}</td>
                                 <td>
+                                    <a href="{{ route('user.show', $data->id) }}" type="button" class="btn btn-warning raised gap-2">
+                                        <i class="material-icons-outlined">visibility</i>
+                                    </a>
                                     <a class="btn ripple btn-danger raised gap-2" href="{{ route('user.destroy', $data->id) }}" data-confirm-delete="true">
                                         <i class="material-icons-outlined">delete</i>
                                     </a>

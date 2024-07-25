@@ -58,67 +58,7 @@
         <div class="container">
             <div class="checkout-section">
                 <div class="row gy-5">
-                    <div class="col-lg-6">
-                        <div class="checkout-wrapper">
-                            <div class="account-section billing-section">
-                                <h5 class="wrapper-heading">Billing Details</h5>
-                                <div class="review-form">
-                                    <div class=" account-inner-form">
-                                        <div class="review-form-name">
-                                            <label for="fname" class="form-label">First Name*</label>
-                                            <input type="text" id="fname" class="form-control" placeholder="First Name">
-                                        </div>
-                                        <div class="review-form-name">
-                                            <label for="lname" class="form-label">Last Name*</label>
-                                            <input type="text" id="lname" class="form-control" placeholder="Last Name">
-                                        </div>
-                                    </div>
-                                    <div class=" account-inner-form">
-                                        <div class="review-form-name">
-                                            <label for="email" class="form-label">Email*</label>
-                                            <input type="email" id="email" class="form-control"
-                                                placeholder="user@gmail.com">
-                                        </div>
-                                        <div class="review-form-name">
-                                            <label for="phone" class="form-label">Phone*</label>
-                                            <input type="tel" id="phone" class="form-control"
-                                                placeholder="+880388**0899">
-                                        </div>
-                                    </div>
-                                    <div class="review-form-name">
-                                        <label for="country" class="form-label">Country*</label>
-                                        <select id="country" class="form-select">
-                                            <option>Choose...</option>
-                                            <option>Bangladesh</option>
-                                            <option>United States</option>
-                                            <option selected>United Kingdom</option>
-                                        </select>
-                                    </div>
-                                    <div class="review-form-name address-form">
-                                        <label for="address" class="form-label">Address*</label>
-                                        <input type="text" id="address" class="form-control"
-                                            placeholder="Enter your Address">
-                                    </div>
-                                    <div class=" account-inner-form city-inner-form">
-                                        <div class="review-form-name">
-                                            <label for="city" class="form-label">Town / City*</label>
-                                            <select id="city" class="form-select">
-                                                <option>Choose...</option>
-                                                <option>Newyork</option>
-                                                <option>Dhaka</option>
-                                                <option selected>London</option>
-                                            </select>
-                                        </div>
-                                        <div class="review-form-name">
-                                            <label for="number" class="form-label">Postcode / ZIP*</label>
-                                            <input type="number" id="number" class="form-control" placeholder="0000">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
+                    <div class="col">
                         <div class="checkout-wrapper">
                             <div class="account-section billing-section">
                                 <h5 class="wrapper-heading">Order Summary</h5>
@@ -132,29 +72,11 @@
                                         <ul class="product-list">
                                             <li>
                                                 <div class="product-info">
-                                                    <h5 class="wrapper-heading">Apple Watch X1</h5>
-                                                    <p class="paragraph">64GB, Black, 44mm, Chain Belt</p>
+                                                    <h5 class="wrapper-heading">Whiskas Kucing</h5>
+                                                    <p class="paragraph">Whiskas Kucing Rasa Ayam</p>
                                                 </div>
                                                 <div class="price">
-                                                    <h5 class="wrapper-heading">$38</h5>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="product-info">
-                                                    <h5 class="wrapper-heading">Beats Wireless x1</h5>
-                                                    <p class="paragraph">64GB, Black, 44mm, Chain Belt</p>
-                                                </div>
-                                                <div class="price">
-                                                    <h5 class="wrapper-heading">$48</h5>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="product-info">
-                                                    <h5 class="wrapper-heading">Samsung Galaxy S10 x2</h5>
-                                                    <p class="paragraph">12GB RAM, 512GB, Dark Blue</p>
-                                                </div>
-                                                <div class="price">
-                                                    <h5 class="wrapper-heading">$279</h5>
+                                                    <h5 class="wrapper-heading">Rp. 15.000</h5>
                                                 </div>
                                             </li>
                                         </ul>
@@ -162,7 +84,7 @@
                                     <hr>
                                     <div class="subtotal product-total">
                                         <h5 class="wrapper-heading">SUBTOTAL</h5>
-                                        <h5 class="wrapper-heading">$365</h5>
+                                        <h5 class="wrapper-heading">Rp. 15.000</h5>
                                     </div>
                                     <div class="subtotal product-total">
                                         <ul class="product-list">
@@ -173,7 +95,7 @@
 
                                                 </div>
                                                 <div class="price">
-                                                    <h5 class="wrapper-heading">+$0</h5>
+                                                    <h5 class="wrapper-heading">Rp.0</h5>
                                                 </div>
                                             </li>
                                         </ul>
@@ -181,7 +103,7 @@
                                     <hr>
                                     <div class="subtotal total">
                                         <h5 class="wrapper-heading">TOTAL</h5>
-                                        <h5 class="wrapper-heading price">$365</h5>
+                                        <h5 class="wrapper-heading price">Rp. 15.000</h5>
                                     </div>
                                     <div class="subtotal payment-type">
                                         <div class="checkbox-item">

@@ -20,8 +20,8 @@ class kategori extends Model
      //menghapus img
     public function deleteImage()
     {
-        if ($this->gambar && file_exists(public_path('images/artikel' . $this->gambar))) {
-            return unlink(public_path('images/artikel' . $this->gambar));
+        if ($this->gambar && file_exists(public_path('images/kategori' . $this->gambar))) {
+            return unlink(public_path('images/kategori' . $this->gambar));
         }
     }
 }

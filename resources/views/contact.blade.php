@@ -11,7 +11,7 @@
     <link rel="icon" href="./assets/images/homepage-one/icon.png">
 
     <!--title  -->
-    <title>Shopus: Your One-Stop Destination for Fashion and Style</title>
+    <title>Rara PetShop</title>
 
 
     <!--------------- swiper-css ---------------->

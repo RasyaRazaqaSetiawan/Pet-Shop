@@ -15,24 +15,23 @@ class product extends Model
 
     public $timestamps = true;
 
-    public function kategori()
+    //relasi ke tabel kategori
+    public function Kategori()
     {
-        return $this->belongsTo(Kategori::class, 'id_kategori');
+        return $this->BelongsTo(Kategori::class, 'id_kategori');
     }
 
-    public function pesanan()
+    public function keranjang()
     {
-        return $this->hasMany(Pesanan::class, 'id_product');
+        return $this->belongsToMany(Keranjang::class);
     }
-
-    
 
 
     //menghapus img
     public function deleteImage()
     {
-        if ($this->gambar && file_exists(public_path('images/artikel' . $this->gambar))) {
-            return unlink(public_path('images/artikel' . $this->gambar));
+        if ($this->gambar && file_exists(public_path('images/product' . $this->gambar))) {
+            return unlink(public_path('images/product' . $this->gambar));
         }
     }
 
